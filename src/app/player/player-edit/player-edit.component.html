@@ -1,1 +1,8 @@
-<p>player-edit works!</p>
+<div>
+  <form (ngSubmit)="createPlayer()">
+    <input type="text" name="name" id="txtName" [(ngModel)]="player.name">
+    <button type="submit">
+      Save
+    </button>
+  </form>
+</div>
