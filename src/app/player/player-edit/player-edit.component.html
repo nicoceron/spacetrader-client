@@ -1,6 +1,13 @@
 <div>
   <form (ngSubmit)="createPlayer()">
-    <input type="text" name="name" id="txtName" [(ngModel)]="player.name">
+    <!-- Name Field -->
+    <input type="text" name="name" id="txtName" [(ngModel)]="player.name" placeholder="Name">
+
+
+    <!-- Password Field -->
+    <input type="password" name="password" id="txtPassword" [(ngModel)]="player.password" placeholder="Password">
+
+    <!-- Submit Button -->
     <button type="submit">
       Save
     </button>
