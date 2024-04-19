@@ -18,6 +18,6 @@ export class PlayerListComponent {
 ngOnInit(): void {
     this.playerService.listPlayers().subscribe(participants => this.players = participants)
   }
-)
+
 
 }

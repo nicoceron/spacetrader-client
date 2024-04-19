@@ -24,7 +24,7 @@ searchPlayer(id: number): Observable<Player> {
     return this.http.get<Player>(`${environment.serverUrl}/api/player/${id}`)
   }
 
-  createPlayer(player: Player): Observable<Player> {
+createPlayer(player: Player): Observable<Player> {
     return this.http.put<Player>(`${environment.serverUrl}/api/player`, player, { headers: this.headers });
   }
 }

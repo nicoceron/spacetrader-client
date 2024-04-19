@@ -1,0 +1,10 @@
+<tr *ngFor="let stock of planetaryStocks">
+  <td>{{ stock.id }}</td>
+  <td>{{ stock.stock }}</td>
+  <td>{{ stock.buyingPrice }}</td>
+  <td>{{ stock.sellingPrice }}</td>
+  <td>
+    <button (click)="onBuy(stock.id, 1)">Buy</button>
+    <button (click)="onSell(stock.id, 1)">Sell</button>
+  </td>
+</tr>
