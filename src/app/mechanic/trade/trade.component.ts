@@ -40,8 +40,6 @@ constructor(
     }
   }
 
-
-
   onBuy(stockId: number, quantity: number) {
     const transaction: TransactionRequest = {
       spaceshipId: 1, // this should be the actual spaceship id
