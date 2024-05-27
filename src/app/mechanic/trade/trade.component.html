@@ -1,25 +1,28 @@
-<table class="table">
-  <thead>
-  <tr>
-    <th scope="col">ID</th>
-    <th scope="col">Stock</th>
-    <th scope="col">Buying Price</th>
-    <th scope="col">Selling Price</th>
-    <th scope="col">Product Name</th>
-    <th scope="col">Actions</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let stock of planetaryStocks">
-    <td>{{ stock.id }}</td>
-    <td>{{ stock.stock }}</td>
-    <td>{{ stock.buyingPrice | currency }}</td>
-    <td>{{ stock.sellingPrice | currency }}</td>
-    <td>{{ stock.product.name }}</td>
-    <td>
-      <button type="button" class="btn btn-success btn-sm" (click)="onBuy(stock.id, 1)">Buy</button>
-      <button type="button" class="btn btn-danger btn-sm" (click)="onSell(stock.id, 1)">Sell</button>
-    </td>
-  </tr>
-  </tbody>
-</table>
+<div class="planetary-stock-container">
+  <h2>Planetary Stock</h2>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Stock</th>
+      <th scope="col">Buying Price</th>
+      <th scope="col">Selling Price</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let stock of planetaryStocks">
+      <td>{{ stock.id }}</td>
+      <td>{{ stock.stock }}</td>
+      <td>{{ stock.buyingPrice | currency }}</td>
+      <td>{{ stock.sellingPrice | currency }}</td>
+      <td>{{ stock.product.name }}</td>
+      <td>
+        <button type="button" class="btn btn-success btn-sm" (click)="onBuy(stock.id, 1)">Buy</button>
+        <button type="button" class="btn btn-danger btn-sm" (click)="onSell(stock.id, 1)">Sell</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
