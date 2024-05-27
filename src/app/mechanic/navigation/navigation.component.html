@@ -1,18 +1,18 @@
-<div>
+<div class="stars-container">
   <h2>Closest Stars</h2>
-  <ul>
-    <li *ngFor="let star of closestStars">
-      {{ star.name }}
-      <button (click)="onTravelToStar(star.id)">Travel Here</button>
+  <ul class="stars-list">
+    <li *ngFor="let star of closestStars" class="star-item">
+      <span>{{ star.name }}</span>
+      <button (click)="onTravelToStar(star.id)" class="travel-button">Travel Here</button>
     </li>
   </ul>
 
-  <div *ngIf="selectedStarId">
+  <div *ngIf="selectedStarId" class="planets-container">
     <h2>Planets in Selected Star</h2>
-    <ul>
-      <li *ngFor="let planet of planetsInSelectedStar">
-        {{ planet.name }}
-        <button (click)="onTravelToPlanet(planet.id)">Travel to Planet</button>
+    <ul class="planets-list">
+      <li *ngFor="let planet of planetsInSelectedStar" class="planet-item">
+        <span>{{ planet.name }}</span>
+        <button (click)="onTravelToPlanet(planet.id)" class="travel-button">Travel to Planet</button>
       </li>
     </ul>
   </div>

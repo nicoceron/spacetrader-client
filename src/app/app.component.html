@@ -1,10 +1,27 @@
-<div>
-  <h1>SpaceTrader App</h1>
-  <nav>
-    <ul>
-      <li><a routerLink="mechanic/navigation">Navigation</a></li>
-<!--      <li><a routerLink="mechanic/trade">Trade</a></li>-->
-    </ul>
-  </nav>
-  <router-outlet></router-outlet>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>SpaceTrader App</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="/./styles.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>SpaceTrader App</h1>
+    <nav>
+      <ul>
+        <li><a routerLink="mechanic/navigation">Navigation</a></li>
+        <!-- <li><a routerLink="mechanic/trade">Trade</a></li> -->
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
 </div>
+</body>
+</html>

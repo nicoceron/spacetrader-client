@@ -1,1 +1,189 @@
-/* You can add global styles to this file, and also import other style files */
+/* styles.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #2dba4e;
+    color: #e0e0e0;
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 300;
+    color: #ffffff;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    background-color: #1a1a1a;
+    border: 2px solid #2b3137;
+}
+
+nav ul li a:hover {
+    background-color: #2b3137;
+    transform: scale(1.1);
+}
+
+main {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    margin-top: 20px;
+}
+
+.stars-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+.stars-container h2 {
+    color: #2dba4e;
+    text-align: center;
+    font-weight: 300;
+    border-bottom: 2px solid #2dba4e;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.stars-list, .planets-list {
+    list-style: none;
+    padding: 0;
+}
+
+.star-item, .planet-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+}
+
+.star-item:last-child, .planet-item:last-child {
+    border-bottom: none;
+}
+
+.star-item {
+    padding-left: 10px;
+}
+
+.travel-button {
+    color: #ffffff;
+    background-color: #1a1a1a;
+    border: 2px solid #0d74e7;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.travel-button:hover {
+    background-color: #2b3137;
+    transform: scale(1.1);
+}
+
+.planets-container {
+    margin-top: 20px;
+}
+
+.planets-container h2 {
+    color: #2dba4e;
+    text-align: center;
+    font-weight: 300;
+    border-bottom: 2px solid #2dba4e;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+.table thead {
+    background-color: #2dba4e;
+    color: #e0e0e0;
+}
+
+.table th, .table td {
+    padding: 12px 15px;
+    border: 1px solid #333;
+    text-align: left;
+}
+
+.table th {
+    font-weight: bold;
+}
+
+.table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.table tbody tr:hover {
+    background-color: #333;
+}
+
+.table .btn {
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    color: #ffffff;
+}
+
+.table .btn-success {
+    background-color: #0d74e7;
+}
+
+.table .btn-danger {
+    background-color: #e74c3c;
+}
+
+.table .btn:hover {
+    background-color: #2b3137;
+    transform: scale(1.1);
+}
