@@ -1,32 +1,32 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { environment } from '../../environments/environment';
-import { Star } from '../model/star';
-import { Planet } from '../model/planet';
-import { PlanetaryStock } from '../model/planetary-stock';
-import { TransactionRequest } from '../model/transaction-request';
-import { catchError } from 'rxjs/operators';
-import { Product } from '../model/product';
+import {Injectable} from '@angular/core';
+import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
+import {Observable, throwError} from 'rxjs';
+import {environment} from '../../environments/environment';
+import {Star} from '../model/star';
+import {Planet} from '../model/planet';
+import {PlanetaryStock} from '../model/planetary-stock';
+import {TransactionRequest} from '../model/transaction-request';
+import {catchError} from 'rxjs/operators';
 
 @Injectable({
     providedIn: 'root'
 })
 export class MechanicService {
-    private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    private headers = new HttpHeaders({'Content-Type': 'application/json'});
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient) {
+    }
 
     getClosestStars(spaceshipId: number): Observable<Star[]> {
         return this.http.get<Star[]>(`${environment.serverUrl}/api/navigation/closest-stars/${spaceshipId}`);
     }
 
     travelToStar(spaceshipId: number, starId: number): Observable<any> {
-        return this.http.post(`${environment.serverUrl}/api/navigation/travel-to-star/${spaceshipId}/${starId}`, {}, { headers: this.headers });
+        return this.http.post(`${environment.serverUrl}/api/navigation/travel-to-star/${spaceshipId}/${starId}`, {}, {headers: this.headers});
     }
 
     travelToPlanet(spaceshipId: number, planetId: number): Observable<any> {
-        return this.http.post(`${environment.serverUrl}/api/navigation/travel-to-planet/${spaceshipId}/${planetId}`, {}, { headers: this.headers });
+        return this.http.post(`${environment.serverUrl}/api/navigation/travel-to-planet/${spaceshipId}/${planetId}`, {}, {headers: this.headers});
     }
 
     getPlanetsInStar(starId: number): Observable<Planet[]> {
@@ -38,11 +38,17 @@ export class MechanicService {
     }
 
     buyProduct(transaction: TransactionRequest): Observable<string> {
-        return this.http.post<string>(`${environment.serverUrl}/api/trade/buy`, transaction, { headers: this.headers })
+        return this.http.post<string>(`${environment.serverUrl}/api/trade/buy`, transaction, {headers: this.headers})
+            .pipe(
+                catchError(this.handleError)
+            );
     }
 
+
     sellProduct(transaction: TransactionRequest): Observable<string> {
-        return this.http.post<string>(`${environment.serverUrl}/api/trade/sell`, transaction, { headers: this.headers })
+        return this.http.post<string>(`${environment.serverUrl}/api/trade/sell`, transaction, {headers: this.headers}).pipe(
+            catchError(this.handleError)
+        );
     }
 
     private handleError(error: HttpErrorResponse) {

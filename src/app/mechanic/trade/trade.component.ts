@@ -40,6 +40,10 @@ export class TradeComponent implements OnInit {
         }
     }
 
+    refreshData(): void {
+        this.loadPlanetaryStock();
+    }
+
     onBuy(stockId: number, quantity: number): void {
         const transaction: TransactionRequest = {
             spaceshipId: 1, // this should be the actual spaceship id
@@ -51,6 +55,7 @@ export class TradeComponent implements OnInit {
             response => {
                 console.log('Purchase successful', response);
                 alert('Stock purchased successfully');
+                this.refreshData(); // Refresh the data after successful purchase
             },
             error => {
                 console.error('Error purchasing stock', error);
@@ -70,6 +75,7 @@ export class TradeComponent implements OnInit {
             response => {
                 console.log('Sale successful', response);
                 alert('Stock sold successfully');
+                this.refreshData(); // Refresh the data after successful sale
             },
             error => {
                 console.error('Error selling stock', error);
